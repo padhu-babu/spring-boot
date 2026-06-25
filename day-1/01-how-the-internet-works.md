@@ -22,14 +22,10 @@ Every time you use the internet — loading a website, checking email, watching 
 
 That's it. The entire internet is built on this one pattern: **ask and answer**.
 
-```
-┌──────────┐                        ┌──────────┐
-│          │  "Give me this page"   │          │
-│  CLIENT  │ ────────────────────►  │  SERVER  │
-│ (browser)│                        │(computer)│
-│          │  ◄──────────────────── │          │
-│          │  "Here's the page"     │          │
-└──────────┘                        └──────────┘
+```mermaid
+flowchart LR
+    Client["CLIENT\n(browser)"] -- "Give me this page" --> Server["SERVER\n(computer)"]
+    Server -- "Here's the page" --> Client
 ```
 
 **Analogy**: Think of a restaurant. You (the client) sit at a table and ask for food. The kitchen (the server) prepares it and sends it out. You don't walk into the kitchen. The kitchen doesn't come to your table unprompted. There's a clear ask-and-answer pattern.
@@ -64,12 +60,13 @@ GitHub's server:  140.82.121.4
 
 One server computer can run many programs. A port number tells the request *which program* on that computer should handle it.
 
-```
-Server at 142.250.80.46
-  ├── Port 80:   Web server (HTTP)
-  ├── Port 443:  Web server (HTTPS, secure)
-  ├── Port 25:   Email server
-  └── Port 5432: Database server
+```mermaid
+graph TD
+    Server["Server at 142.250.80.46"]
+    Server --> P80["Port 80: Web server (HTTP)"]
+    Server --> P443["Port 443: Web server (HTTPS, secure)"]
+    Server --> P25["Port 25: Email server"]
+    Server --> P5432["Port 5432: Database server"]
 ```
 
 **Analogy**: If the IP address is a building's street address, the port is the apartment number. The mail carrier needs both to deliver to the right place.
@@ -157,13 +154,13 @@ Step 7: Rendering
   Your browser receives the HTML and draws the page on screen
 ```
 
-```
-┌────────┐     ┌─────┐     ┌────────────┐     ┌──────────┐
-│Browser │────►│ DNS │────►│   Server   │────►│ Database │
-│        │     │     │     │ (your code │     │          │
-│        │◄────│     │◄────│  runs here)│◄────│          │
-└────────┘     └─────┘     └────────────┘     └──────────┘
-   Step 1        Step 1      Steps 4-6          Step 5
+```mermaid
+flowchart LR
+    Browser["Browser\nStep 1"] -- "request" --> DNS["DNS\nStep 1"]
+    DNS -- "resolved IP" --> Server["Server\n(your code runs here)\nSteps 4-6"]
+    Server -- "query" --> Database["Database\nStep 5"]
+    Database -- "data" --> Server
+    Server -- "response" --> Browser
 ```
 
 **This is the journey every single web request takes.** Every Google search, every Instagram post, every Netflix stream. The same pattern, billions of times per second, all over the world.

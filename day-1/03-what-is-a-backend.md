@@ -35,40 +35,18 @@ When someone builds a web application, there are two halves:
 
 Here's the key insight: **the frontend and backend are completely separate programs running on different computers**. The frontend runs on the user's device. The backend runs on your server. They communicate over the internet using HTTP — the protocol you learned in Chapter 2.
 
-```
-┌───────────────────────────────────────┐
-│              THE USER                 │
-│         (types, clicks, taps)         │
-└──────────────────┬────────────────────┘
-                   │
-       ┌───────────▼───────────┐
-       │       FRONTEND        │  Runs on the USER'S device
-       │                       │
-       │  - What you see       │
-       │  - Buttons, forms     │
-       │  - Runs in browser    │
-       │    or mobile app      │
-       └───────────┬───────────┘
-                   │ HTTP requests
-                   │ (over the internet)
-      ─ ─ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ─ ─  ← The internet (network boundary)
-                   │
-       ┌───────────▼───────────┐
-       │       BACKEND         │  Runs on YOUR server
-       │                       │
-       │  - Business logic     │  ← This is what you're
-       │  - Data validation    │    learning to build
-       │  - Authentication     │
-       │  - Database access    │
-       └───────────┬───────────┘
-                   │
-       ┌───────────▼───────────┐
-       │       DATABASE        │  Also on YOUR server
-       │                       │  (or a dedicated db server)
-       │  - Stores all data    │
-       │  - Books, users,      │
-       │    orders, etc.       │
-       └───────────────────────┘
+```mermaid
+flowchart TD
+    USER["THE USER\n(types, clicks, taps)"]
+    FRONTEND["FRONTEND\n\nRuns on the USER'S device\n- What you see\n- Buttons, forms\n- Runs in browser or mobile app"]
+    INTERNET(["--- The internet (network boundary) ---"])
+    BACKEND["BACKEND\n\nRuns on YOUR server\n- Business logic\n- Data validation\n- Authentication\n- Database access\n\nThis is what you're learning to build"]
+    DATABASE[("DATABASE\n\nAlso on YOUR server\n(or a dedicated db server)\n- Stores all data\n- Books, users, orders, etc.")]
+
+    USER --> FRONTEND
+    FRONTEND -- "HTTP requests\n(over the internet)" --> INTERNET
+    INTERNET --> BACKEND
+    BACKEND --> DATABASE
 ```
 
 **Analogy — The Restaurant**:
@@ -102,21 +80,18 @@ You might wonder: "Why not just put everything in one place?"
 
 Your bookstore can have a website, a mobile app, and a tablet app — all talking to the *same* backend. You write the logic once.
 
-```
-  ┌──────────────┐
-  │   Website    │──────┐
-  │  (React/JS)  │      │
-  └──────────────┘      │
-                        │    ┌────────────────┐    ┌──────────┐
-  ┌──────────────┐      ├───►│  Backend API   │───►│ Database │
-  │  Mobile App  │──────┤    │  (Spring Boot) │    │          │
-  │ (iOS/Android)│      │    │                │◄───│          │
-  └──────────────┘      │    │  Same code     │    └──────────┘
-                        │    │  Same rules    │
-  ┌──────────────┐      │    │  Same database │
-  │  Partner API │──────┘    └────────────────┘
-  │  (their code)│
-  └──────────────┘
+```mermaid
+flowchart LR
+    WEB["Website\n(React/JS)"]
+    MOBILE["Mobile App\n(iOS/Android)"]
+    PARTNER["Partner API\n(their code)"]
+    BACKEND["Backend API\n(Spring Boot)\n\nSame code\nSame rules\nSame database"]
+    DB[("Database")]
+
+    WEB --> BACKEND
+    MOBILE --> BACKEND
+    PARTNER --> BACKEND
+    BACKEND <--> DB
 ```
 
 Without this separation, you'd write the same "add a book" logic three times — once in the website, once in the mobile app, once for the partner. When a rule changes ("max 500 pages"), you'd have to update all three. With a backend, you update the rule once.
@@ -205,24 +180,19 @@ With a database:
 
 In Spring Boot, data access lives in the **Repository** layer. You'll learn about JPA (Java Persistence API), which lets you write Java code instead of raw SQL queries.
 
-```
-The Three Jobs — Visualized:
+```mermaid
+flowchart TD
+    subgraph BACKEND ["YOUR BACKEND"]
+        RECEIVE["Job 1: Receive"]
+        THINK["Job 2: Think\n(Business rules, Validation, Calculations)"]
+        STORE["Job 3: Store/Fetch"]
+        SEND["Job 1: Send"]
+        RECEIVE --> THINK --> STORE --> SEND
+    end
 
-                  ┌────────────────────────────────────────┐
-                  │          YOUR BACKEND                  │
-                  │                                        │
-  HTTP Request ──►│  [Job 1: Receive]                      │
-                  │       │                                │
-                  │       ▼                                │
-                  │  [Job 2: Think]  ← Business rules      │
-                  │       │            Validation           │
-                  │       ▼            Calculations         │
-                  │  [Job 3: Store/Fetch] ──► DATABASE      │
-                  │       │              ◄──                │
-                  │       ▼                                │
-  HTTP Response ◄─│  [Job 1: Send]                         │
-                  │                                        │
-                  └────────────────────────────────────────┘
+    REQ["HTTP Request"] --> RECEIVE
+    STORE <--> DB[("DATABASE")]
+    SEND --> RESP["HTTP Response"]
 ```
 
 ### What Is an API?
@@ -231,24 +201,17 @@ You'll hear the term **API** constantly. Let's make sure it's crystal clear.
 
 **API** stands for **Application Programming Interface**. It's the set of rules and endpoints that your backend exposes to the outside world. Think of it as a **menu** at a restaurant.
 
-```
-┌────────────────────────────────────────────────────────────┐
-│                 BookShelf API (the "menu")                  │
-│                                                            │
-│  GET    /api/books       → Returns a list of all books     │
-│  GET    /api/books/42    → Returns book with ID 42         │
-│  POST   /api/books       → Creates a new book              │
-│  PUT    /api/books/42    → Replaces book 42                │
-│  DELETE /api/books/42    → Deletes book 42                 │
-│                                                            │
-│  Rules:                                                    │
-│  - POST requires a JSON body with "title" (required)       │
-│    and "pages" (required, must be > 0)                     │
-│  - Returns JSON responses                                  │
-│  - Returns 404 if a book ID doesn't exist                  │
-│  - Returns 400 if the request body is invalid              │
-│  - Requires authentication for POST/PUT/DELETE             │
-└────────────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph API ["BookShelf API (the 'menu')"]
+        direction LR
+        E1["GET /api/books → Returns a list of all books"]
+        E2["GET /api/books/42 → Returns book with ID 42"]
+        E3["POST /api/books → Creates a new book"]
+        E4["PUT /api/books/42 → Replaces book 42"]
+        E5["DELETE /api/books/42 → Deletes book 42"]
+        R1["Rules:\n- POST requires JSON body with 'title' and 'pages' (> 0)\n- Returns JSON responses\n- Returns 404 if book ID doesn't exist\n- Returns 400 if request body is invalid\n- Requires authentication for POST/PUT/DELETE"]
+    end
 ```
 
 The API is a **contract**: "If you send me a request in *this* format, I'll send you a response in *that* format." The client doesn't need to know how the backend works internally — it just needs to know the menu.
@@ -356,18 +319,22 @@ Remember from Chapter 2: HTTP is stateless. Your backend should be too.
 
 **Why?** Because in production, you often have multiple copies of your server running behind a **load balancer** — a traffic cop that distributes incoming requests across servers to share the workload:
 
-```
-                    ┌──────────────┐
-               ┌───►│  Server A    │───┐
-               │    │  (your app)  │   │
-┌────────┐  ┌──┴───┐└──────────────┘   │  ┌──────────┐
-│ Client │─►│ Load │                   ├─►│ Database │
-│        │  │Balan-│                   │  │ (shared) │
-│        │◄─│ cer  │┌──────────────┐   │  │          │
-└────────┘  └──┬───┘│  Server B    │   │  └──────────┘
-               └───►│  (your app)  │───┘
-                    └──────────────┘
+```mermaid
+flowchart LR
+    CLIENT["Client"]
+    LB["Load\nBalancer"]
+    A["Server A\n(your app)"]
+    B["Server B\n(your app)"]
+    DB[("Database\n(shared)")]
 
+    CLIENT <--> LB
+    LB --> A
+    LB --> B
+    A --> DB
+    B --> DB
+```
+
+```
 Request 1 → might go to Server A
 Request 2 → might go to Server B
 Request 3 → might go to Server A again
@@ -454,27 +421,26 @@ Now every server reads from and writes to the **same** database. Request 1 goes 
 
 So far we've described a simple setup: one backend server, one database. In reality, production backends are more complex. You don't need to understand all of this yet — but seeing the big picture now will help concepts click faster later.
 
-```
-                              ┌──────────────────────────────────┐
-                              │      Your Backend System        │
-                              │                                  │
-┌────────┐  ┌──────────┐     │  ┌──────────┐  ┌──────────┐     │
-│Website │─►│          │     │  │ Server A │  │ Server B │     │
-└────────┘  │   Load   │────►│  │ (copy 1) │  │ (copy 2) │     │
-┌────────┐  │ Balancer │     │  └────┬─────┘  └────┬─────┘     │
-│Mobile  │─►│          │     │       └──────┬──────┘            │
-│  App   │  └──────────┘     │              │                   │
-└────────┘                   │       ┌──────▼──────┐            │
-                              │       │  Database   │            │
-                              │       │ (PostgreSQL)│            │
-                              │       └─────────────┘            │
-                              │                                  │
-                              │  Also common:                    │
-                              │  - Cache (Redis) for speed       │
-                              │  - Message Queue (Kafka) for     │
-                              │    background tasks              │
-                              │  - File Storage (S3) for images  │
-                              └──────────────────────────────────┘
+```mermaid
+flowchart LR
+    WEB["Website"]
+    MOBILE["Mobile App"]
+    LB["Load\nBalancer"]
+
+    subgraph SYSTEM ["Your Backend System"]
+        A["Server A\n(copy 1)"]
+        B["Server B\n(copy 2)"]
+        DB[("Database\n(PostgreSQL)")]
+        EXTRAS["Also common:\n- Cache (Redis) for speed\n- Message Queue (Kafka) for background tasks\n- File Storage (S3) for images"]
+
+        A --> DB
+        B --> DB
+    end
+
+    WEB --> LB
+    MOBILE --> LB
+    LB --> A
+    LB --> B
 ```
 
 **Don't panic.** For this guide, your setup is much simpler:
@@ -500,54 +466,18 @@ Clearing up common misconceptions:
 
 Here's the architecture of what you'll build in this guide. Each layer has one job, and they stack on top of each other like floors in a building:
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                  YOUR SPRING BOOT APP                        │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  Controller Layer (Chapter 7)                          │  │
-│  │                                                        │  │
-│  │  "The receptionist"                                    │  │
-│  │  - Receives HTTP requests                              │  │
-│  │  - Reads the method, path, and body                    │  │
-│  │  - Calls the right service method                      │  │
-│  │  - Sends the HTTP response                             │  │
-│  │                                                        │  │
-│  │  Example: @GetMapping("/api/books") → getAllBooks()     │  │
-│  └─────────────────────────┬──────────────────────────────┘  │
-│                            │ calls                            │
-│  ┌─────────────────────────▼──────────────────────────────┐  │
-│  │  Service Layer (Chapter 10)                            │  │
-│  │                                                        │  │
-│  │  "The brain"                                           │  │
-│  │  - Contains all business logic                         │  │
-│  │  - Validates data, enforces rules                      │  │
-│  │  - Converts between DTOs and entities                  │  │
-│  │  - Decides what to do (save? reject? calculate?)       │  │
-│  │                                                        │  │
-│  │  Example: "Title can't be empty, pages > 0"            │  │
-│  └─────────────────────────┬──────────────────────────────┘  │
-│                            │ calls                            │
-│  ┌─────────────────────────▼──────────────────────────────┐  │
-│  │  Repository Layer (Chapter 12)                         │  │
-│  │                                                        │  │
-│  │  "The filing clerk"                                    │  │
-│  │  - Talks to the database                               │  │
-│  │  - Saves, updates, deletes, and queries data           │  │
-│  │  - Knows nothing about HTTP or business rules          │  │
-│  │                                                        │  │
-│  │  Example: bookRepository.save(book)                    │  │
-│  └─────────────────────────┬──────────────────────────────┘  │
-│                            │                                  │
-└────────────────────────────┼──────────────────────────────────┘
-                             │ SQL queries
-                    ┌────────▼────────┐
-                    │    Database     │
-                    │  (Chapter 12)   │
-                    │                 │
-                    │  Stores data    │
-                    │  permanently    │
-                    └─────────────────┘
+```mermaid
+flowchart TD
+    subgraph APP ["YOUR SPRING BOOT APP"]
+        CONTROLLER["Controller Layer (Chapter 7)\n\n'The receptionist'\n- Receives HTTP requests\n- Reads the method, path, and body\n- Calls the right service method\n- Sends the HTTP response\n\nExample: @GetMapping('/api/books') -> getAllBooks()"]
+        SERVICE["Service Layer (Chapter 10)\n\n'The brain'\n- Contains all business logic\n- Validates data, enforces rules\n- Converts between DTOs and entities\n- Decides what to do (save? reject? calculate?)\n\nExample: 'Title can't be empty, pages > 0'"]
+        REPO["Repository Layer (Chapter 12)\n\n'The filing clerk'\n- Talks to the database\n- Saves, updates, deletes, and queries data\n- Knows nothing about HTTP or business rules\n\nExample: bookRepository.save(book)"]
+
+        CONTROLLER -- "calls" --> SERVICE
+        SERVICE -- "calls" --> REPO
+    end
+
+    REPO -- "SQL queries" --> DB[("Database (Chapter 12)\n\nStores data permanently")]
 ```
 
 **Why three layers?** For the same reason restaurants separate the dining room, kitchen, and pantry. Each has a clear responsibility:

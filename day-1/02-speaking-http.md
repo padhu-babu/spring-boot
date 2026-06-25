@@ -42,12 +42,17 @@ You've probably noticed some URLs start with `http://` and others with `https://
 - **HTTP**: Messages are sent as plain text. Anyone sitting between the client and server (like someone on the same Wi-Fi network) could potentially read them.
 - **HTTPS**: Messages are **encrypted** using TLS (Transport Layer Security). Even if someone intercepts the data, they can't read it — it looks like random gibberish.
 
-```
-HTTP:    Client ──── "password=secret123" ────► Server
-         (anyone listening can read this)
+```mermaid
+flowchart LR
+    subgraph HTTP
+        A1[Client] -- "\"password=secret123\"" --> B1[Server]
+    end
+    subgraph HTTPS
+        A2[Client] -- "\"a7f2x9k3m...\" (encrypted)" --> B2[Server]
+    end
 
-HTTPS:   Client ──── "a7f2x9k3m..." ────► Server
-         (encrypted — unreadable to eavesdroppers)
+    style HTTP fill:#fee,stroke:#c00
+    style HTTPS fill:#efe,stroke:#0a0
 ```
 
 Today, virtually all websites use HTTPS. When you build your Spring Boot app, you'll start with HTTP on `localhost` (which is fine — you're talking to yourself), but any real deployment should use HTTPS.
@@ -62,18 +67,14 @@ HTTP is built entirely on **request-response**:
 2. The server reads the request, does some work, and sends back an **HTTP response**
 3. Done. The conversation is over. Connection can close.
 
-```
-  Client                          Server
-    │                               │
-    │   ① "GET /books please"       │
-    │ ─────────────────────────────►│
-    │                               │ (server finds the books)
-    │   ② "200 OK, here they are"   │
-    │◄───────────────────────────── │
-    │                               │
-    │   (nothing happens until      │
-    │    another request is sent)   │
-    │                               │
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: ① "GET /books please"
+    Note right of Server: server finds the books
+    Server->>Client: ② "200 OK, here they are"
+    Note over Client,Server: nothing happens until another request is sent
 ```
 
 The server **never sends a message first**. It always waits for a request. This is a fundamental rule. Even if the server has exciting new data to share, it keeps quiet until a client asks.
