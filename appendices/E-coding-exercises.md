@@ -23,6 +23,7 @@ Difficulty guide:
 ## Section 1: HTTP & REST Fundamentals (Exercises 1-6)
 
 📖 **Learn the theory first:** [Chapter 2: Speaking HTTP](../day-1/02-speaking-http.md) | [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md)
+🎨 **Prefer the fun version?** [Chapter 2 (Head First)](../head-first-style/day-1/02-speaking-http.md) | [Chapter 4 (Head First)](../head-first-style/day-2/04-json-and-apis.md)
 
 ### Exercise 1: Exploring HTTP with curl ⭐
 
@@ -240,10 +241,11 @@ For each command, identify:
 ## Section 2: JSON (Exercises 7-10)
 
 📖 **Learn the theory first:** [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md)
+🎨 **Prefer the fun version?** [Chapter 4 (Head First)](../head-first-style/day-2/04-json-and-apis.md)
 
 ### Exercise 7: Java to JSON and Back ⭐
 
-📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) — the "Java and JSON" section.
+📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) · [Head First version](../head-first-style/day-2/04-json-and-apis.md) — the "Java and JSON" section.
 
 **Problem:** Convert between Java classes and their JSON representations.
 
@@ -294,7 +296,7 @@ public class Book {
 
 ### Exercise 8: Fix the Broken JSON ⭐
 
-📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) — the "JSON Syntax Rules" section.
+📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) · [Head First version](../head-first-style/day-2/04-json-and-apis.md) — the "JSON Syntax Rules" section.
 
 **Problem:** Each of the following JSON snippets contains one or more errors. Find and fix them.
 
@@ -365,7 +367,7 @@ public class Book {
 
 ### Exercise 9: Model a Complex Object as JSON ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) — the "Nested Objects and Arrays" section.
+📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) · [Head First version](../head-first-style/day-2/04-json-and-apis.md) — the "Nested Objects and Arrays" section.
 
 **Problem:** Model the following real-world structure as a single JSON document.
 
@@ -405,7 +407,7 @@ public class Book {
 
 ### Exercise 10: JSON Response to Java Classes ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) — the "Deserialization" section.
+📖 *Need a refresher?* See [Chapter 4: JSON and REST APIs](../day-2/04-json-and-apis.md) · [Head First version](../head-first-style/day-2/04-json-and-apis.md) — the "Deserialization" section.
 
 **Problem:** Given the following JSON API response, write the Java classes needed to deserialize it.
 
@@ -462,10 +464,11 @@ public class Book {
 ## Section 3: Controllers & Request Mapping (Exercises 11-18)
 
 📖 **Learn the theory first:** [Chapter 7: Controllers](../day-3/07-controllers.md) | [Chapter 9: Request-Response Lifecycle](../day-3/09-request-response-lifecycle.md)
+🎨 **Prefer the fun version?** [Chapter 7 (Head First)](../head-first-style/day-3/07-controllers.md) | [Chapter 9 (Head First)](../head-first-style/day-3/09-request-response-lifecycle.md)
 
 ### Exercise 11: Your First GET Endpoint ⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) — the "@RestController and @GetMapping" section.
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First version](../head-first-style/day-3/07-controllers.md) — the "@RestController and @GetMapping" section.
 
 **Problem:** Create a Spring Boot controller with a single GET endpoint that returns a greeting message.
 
@@ -491,7 +494,7 @@ Hello, Spring Boot!
 
 ### Exercise 12: Return an Object as JSON ⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) — the "Returning Objects as JSON" section.
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First version](../head-first-style/day-3/07-controllers.md) — the "Returning Objects as JSON" section.
 
 **Problem:** Create a controller that returns a Java object, which Spring Boot automatically converts to JSON.
 
@@ -518,7 +521,7 @@ $ curl http://localhost:8080/api/products/featured
 
 ### Exercise 13: Full CRUD Controller ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) — the "CRUD Endpoints" section.
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First version](../head-first-style/day-3/07-controllers.md) — the "CRUD Endpoints" section.
 
 **Problem:** Create a controller with endpoints for all CRUD operations on a `Product` resource, using an in-memory `List` for storage.
 
@@ -565,7 +568,7 @@ $ curl -X DELETE http://localhost:8080/api/products/1
 
 ### Exercise 14: Path Variables ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) — the "Path Variables" section.
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First version](../head-first-style/day-3/07-controllers.md) — the "Path Variables" section.
 
 **Problem:** Create a controller that uses `@PathVariable` in multiple ways.
 
@@ -600,7 +603,7 @@ $ curl http://localhost:8080/api/books/1/chapters/3
 
 ### Exercise 15: Query Parameters for Filtering ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) — the "Query Parameters" section.
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First version](../head-first-style/day-3/07-controllers.md) — the "Query Parameters" section.
 
 **Problem:** Create an endpoint that uses `@RequestParam` to filter and paginate results.
 
@@ -645,7 +648,7 @@ $ curl "http://localhost:8080/api/products?category=electronics&minPrice=100"
 
 ### Exercise 16: Accepting a Request Body ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) — the "@RequestBody" section.
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First version](../head-first-style/day-3/07-controllers.md) — the "@RequestBody" section.
 
 **Problem:** Create POST and PUT endpoints that read JSON from the request body using `@RequestBody`.
 
@@ -682,7 +685,7 @@ $ curl -X PUT http://localhost:8080/api/products/1 \
 
 ### Exercise 17: ResponseEntity and Status Codes ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 9: Request-Response Lifecycle](../day-3/09-request-response-lifecycle.md) — the "ResponseEntity" section.
+📖 *Need a refresher?* See [Chapter 9: Request-Response Lifecycle](../day-3/09-request-response-lifecycle.md) · [Head First version](../head-first-style/day-3/09-request-response-lifecycle.md) — the "ResponseEntity" section.
 
 **Problem:** Refactor a controller to return proper HTTP status codes using `ResponseEntity`.
 
@@ -727,7 +730,7 @@ $ curl -v -X DELETE http://localhost:8080/api/products/1
 
 ### Exercise 18: Complete Notes API ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) | [Chapter 9: Request-Response Lifecycle](../day-3/09-request-response-lifecycle.md).
+📖 *Need a refresher?* See [Chapter 7: Controllers](../day-3/07-controllers.md) · [Head First](../head-first-style/day-3/07-controllers.md) | [Chapter 9: Request-Response Lifecycle](../day-3/09-request-response-lifecycle.md) · [Head First](../head-first-style/day-3/09-request-response-lifecycle.md).
 
 **Problem:** Build a complete "Notes" REST API controller with full CRUD operations, proper status codes, and in-memory storage.
 
@@ -784,10 +787,11 @@ $ curl -v http://localhost:8080/api/notes/999
 ## Section 4: Dependency Injection (Exercises 19-22)
 
 📖 **Learn the theory first:** [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md)
+🎨 **Prefer the fun version?** [Chapter 8 (Head First)](../head-first-style/day-3/08-dependency-injection.md)
 
 ### Exercise 19: Identify and Fix Tight Coupling ⭐
 
-📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) — the "Tight Coupling vs. Loose Coupling" section.
+📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) · [Head First version](../head-first-style/day-3/08-dependency-injection.md) — the "Tight Coupling vs. Loose Coupling" section.
 
 **Problem:** The following code has tight coupling. Identify the problem and refactor it to use dependency injection.
 
@@ -832,7 +836,7 @@ public class OrderController {
 
 ### Exercise 20: Interface with Multiple Implementations ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) — the "Interfaces and @Primary/@Qualifier" section.
+📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) · [Head First version](../head-first-style/day-3/08-dependency-injection.md) — the "Interfaces and @Primary/@Qualifier" section.
 
 **Problem:** Create a service interface with two implementations and configure Spring to inject the correct one.
 
@@ -864,7 +868,7 @@ Also answer: How would you switch to `DiscountPriceCalculator` without changing 
 
 ### Exercise 21: Refactor Field Injection to Constructor Injection ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) — the "Constructor Injection vs. Field Injection" section.
+📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) · [Head First version](../head-first-style/day-3/08-dependency-injection.md) — the "Constructor Injection vs. Field Injection" section.
 
 **Problem:** The following code uses field injection. Explain why it is discouraged and refactor it to use constructor injection.
 
@@ -919,7 +923,7 @@ public class ReportController {
 
 ### Exercise 22: Build a Notification System ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) — the "Injecting Multiple Implementations" section.
+📖 *Need a refresher?* See [Chapter 8: Dependency Injection](../day-3/08-dependency-injection.md) · [Head First version](../head-first-style/day-3/08-dependency-injection.md) — the "Injecting Multiple Implementations" section.
 
 **Problem:** Build a notification system using interfaces, multiple implementations, and dependency injection.
 
@@ -970,10 +974,11 @@ $ curl -X POST http://localhost:8080/api/notifications \
 ## Section 5: Layered Architecture (Exercises 23-26)
 
 📖 **Learn the theory first:** [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md)
+🎨 **Prefer the fun version?** [Chapter 10 (Head First)](../head-first-style/day-4/10-thinking-in-layers.md)
 
 ### Exercise 23: Refactor a Monolith Controller ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) — the "Controller, Service, Repository" section.
+📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) · [Head First](../head-first-style/day-4/10-thinking-in-layers.md) — the "Controller, Service, Repository" section.
 
 **Problem:** The following controller has all logic in one class. Refactor it into proper Controller, Service, and Repository layers.
 
@@ -1057,7 +1062,7 @@ public class TaskController {
 
 ### Exercise 24: Identify Layer Violations ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) — the "Layer Responsibilities" section.
+📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) · [Head First](../head-first-style/day-4/10-thinking-in-layers.md) — the "Layer Responsibilities" section.
 
 **Problem:** The following code has layer violations — each class is doing something that belongs in a different layer. Identify every violation and explain which layer it belongs to.
 
@@ -1153,7 +1158,7 @@ Your analysis should find at least:
 
 ### Exercise 25: Build a 3-Layer Employee API ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md).
+📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) · [Head First](../head-first-style/day-4/10-thinking-in-layers.md).
 
 **Problem:** Build a complete Employee management API with proper layered architecture from scratch.
 
@@ -1206,7 +1211,7 @@ $ curl http://localhost:8080/api/employees/999
 
 ### Exercise 26: Design the Layers ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) — the "Layer Responsibilities" section.
+📖 *Need a refresher?* See [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md) · [Head First](../head-first-style/day-4/10-thinking-in-layers.md) — the "Layer Responsibilities" section.
 
 **Problem:** You are given a feature description. Without writing the full code, design which code goes in which layer.
 
@@ -1257,10 +1262,11 @@ Also write the method signatures (not full implementations) for:
 ## Section 6: Entities, DTOs & JPA (Exercises 27-34)
 
 📖 **Learn the theory first:** [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) | [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md)
+🎨 **Prefer the fun version?** [Chapter 11 (Head First)](../head-first-style/day-4/11-entities-and-dtos.md) | [Chapter 12 (Head First)](../head-first-style/day-4/12-databases-with-jpa.md)
 
 ### Exercise 27: Create a JPA Entity ⭐
 
-📖 *Need a refresher?* See [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) — the "@Entity and @Id" section.
+📖 *Need a refresher?* See [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) · [Head First](../head-first-style/day-4/11-entities-and-dtos.md) — the "@Entity and @Id" section.
 
 **Problem:** Create a JPA entity class for a Movie.
 
@@ -1301,7 +1307,7 @@ CREATE TABLE movies (
 
 ### Exercise 28: Create DTOs ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) — the "DTOs and Why We Separate Them" section.
+📖 *Need a refresher?* See [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) · [Head First](../head-first-style/day-4/11-entities-and-dtos.md) — the "DTOs and Why We Separate Them" section.
 
 **Problem:** Create request and response DTOs for the Movie entity from Exercise 27.
 
@@ -1331,7 +1337,7 @@ CREATE TABLE movies (
 
 ### Exercise 29: Spring Data Repository ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) — the "JpaRepository" section.
+📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md) — the "JpaRepository" section.
 
 **Problem:** Create a Spring Data JPA repository for the Movie entity.
 
@@ -1362,7 +1368,7 @@ After creating this one interface, you automatically have:
 
 ### Exercise 30: Service Layer with JPA Repository ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) | [Chapter 10: Thinking in Layers](../day-4/10-thinking-in-layers.md).
+📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md) | [Chapter 10](../day-4/10-thinking-in-layers.md) · [Head First](../head-first-style/day-4/10-thinking-in-layers.md).
 
 **Problem:** Create a `MovieService` that uses `MovieRepository` for full CRUD operations.
 
@@ -1395,7 +1401,7 @@ After creating this one interface, you automatically have:
 
 ### Exercise 31: Custom Query Methods ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) — the "Derived Query Methods" section.
+📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md) — the "Derived Query Methods" section.
 
 **Problem:** Add custom finder methods to `MovieRepository` using Spring Data's query derivation.
 
@@ -1431,7 +1437,7 @@ movieRepository.existsByTitle("Inception");
 
 ### Exercise 32: Custom JPQL Queries ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) — the "@Query and JPQL" section.
+📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md) — the "@Query and JPQL" section.
 
 **Problem:** Write custom queries using `@Query` annotation with JPQL.
 
@@ -1476,7 +1482,7 @@ movieRepository.findProlificDirectors(3);
 
 ### Exercise 33: Complete Task Manager API ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) | [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md).
+📖 *Need a refresher?* See [Chapter 11: Entities and DTOs](../day-4/11-entities-and-dtos.md) · [Head First](../head-first-style/day-4/11-entities-and-dtos.md) | [Chapter 12](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md).
 
 **Problem:** Build a complete Task Manager REST API from scratch with a real database.
 
@@ -1554,7 +1560,7 @@ $ curl "http://localhost:8080/api/tasks?priority=HIGH"
 
 ### Exercise 34: Configure H2 Database ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) — the "H2 In-Memory Database" section.
+📖 *Need a refresher?* See [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md) — the "H2 In-Memory Database" section.
 
 **Problem:** Configure an H2 in-memory database for a Spring Boot application and verify it works.
 
@@ -1606,10 +1612,11 @@ spring.jpa.show-sql=???
 ## Section 7: Validation & Error Handling (Exercises 35-39)
 
 📖 **Learn the theory first:** [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md)
+🎨 **Prefer the fun version?** [Chapter 13 (Head First)](../head-first-style/day-5/13-validation-and-error-handling.md)
 
 ### Exercise 35: Add Validation Annotations ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) — the "Bean Validation Annotations" section.
+📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) · [Head First](../head-first-style/day-5/13-validation-and-error-handling.md) — the "Bean Validation Annotations" section.
 
 **Problem:** Add Bean Validation annotations to a DTO so that invalid data is rejected automatically.
 
@@ -1663,7 +1670,7 @@ $ curl -X POST http://localhost:8080/api/register \
 
 ### Exercise 36: Global Exception Handler ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) — the "@ControllerAdvice and @ExceptionHandler" section.
+📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) · [Head First](../head-first-style/day-5/13-validation-and-error-handling.md) — the "@ControllerAdvice and @ExceptionHandler" section.
 
 **Problem:** Create a `@ControllerAdvice` class that handles exceptions globally across all controllers.
 
@@ -1715,7 +1722,7 @@ $ curl -v -X POST http://localhost:8080/api/movies \
 
 ### Exercise 37: Handle Validation Errors Gracefully ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) — the "Handling Validation Errors" section.
+📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) · [Head First](../head-first-style/day-5/13-validation-and-error-handling.md) — the "Handling Validation Errors" section.
 
 **Problem:** When `@Valid` fails, Spring throws `MethodArgumentNotValidException`. Handle it to return structured, user-friendly validation errors.
 
@@ -1769,7 +1776,7 @@ $ curl -X POST http://localhost:8080/api/register \
 
 ### Exercise 38: Multiple Exception Types ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) — the "Custom Exceptions" section.
+📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) · [Head First](../head-first-style/day-5/13-validation-and-error-handling.md) — the "Custom Exceptions" section.
 
 **Problem:** Build a robust error handling system that handles different exception types with appropriate HTTP status codes.
 
@@ -1840,7 +1847,7 @@ $ curl -v -X DELETE http://localhost:8080/api/users/1
 
 ### Exercise 39: Test Your Validation with curl ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) | [Chapter 2: Speaking HTTP](../day-1/02-speaking-http.md).
+📖 *Need a refresher?* See [Chapter 13: Validation and Error Handling](../day-5/13-validation-and-error-handling.md) · [Head First](../head-first-style/day-5/13-validation-and-error-handling.md) | [Chapter 2](../day-1/02-speaking-http.md) · [Head First](../head-first-style/day-1/02-speaking-http.md).
 
 **Problem:** Write `curl` commands that trigger every validation error in the `RegistrationRequest` from Exercise 35, and verify the responses.
 
@@ -1882,10 +1889,11 @@ For the valid request:
 ## Section 8: Relationships & Queries (Exercises 40-43)
 
 📖 **Learn the theory first:** [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md)
+🎨 **Prefer the fun version?** [Chapter 14 (Head First)](../head-first-style/day-5/14-relationships-and-queries.md)
 
 ### Exercise 40: @ManyToOne Relationship ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) — the "@ManyToOne" section.
+📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) · [Head First](../head-first-style/day-5/14-relationships-and-queries.md) — the "@ManyToOne" section.
 
 **Problem:** Create a `Review` entity that belongs to a `Movie` using `@ManyToOne`.
 
@@ -1928,7 +1936,7 @@ The `movie_id` column in `reviews` is a foreign key pointing to `movies.id`.
 
 ### Exercise 41: @OneToMany Relationship ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) — the "@OneToMany and Bidirectional Relationships" section.
+📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) · [Head First](../head-first-style/day-5/14-relationships-and-queries.md) — the "@OneToMany and Bidirectional Relationships" section.
 
 **Problem:** Add the other side of the relationship: a `Movie` has many `Reviews`.
 
@@ -1969,7 +1977,7 @@ Note: the reviews in the response do NOT include the movie object (no circular r
 
 ### Exercise 42: Blog API with Relationships ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) | [Chapter 12: Databases with JPA](../day-4/12-databases-with-jpa.md).
+📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) · [Head First](../head-first-style/day-5/14-relationships-and-queries.md) | [Chapter 12](../day-4/12-databases-with-jpa.md) · [Head First](../head-first-style/day-4/12-databases-with-jpa.md).
 
 **Problem:** Build a "Blog" REST API where Posts have many Comments.
 
@@ -2047,7 +2055,7 @@ $ curl -X DELETE http://localhost:8080/api/posts/1
 
 ### Exercise 43: JOIN FETCH to Solve N+1 ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) — the "N+1 Problem and JOIN FETCH" section.
+📖 *Need a refresher?* See [Chapter 14: Relationships and Queries](../day-5/14-relationships-and-queries.md) · [Head First](../head-first-style/day-5/14-relationships-and-queries.md) — the "N+1 Problem and JOIN FETCH" section.
 
 **Problem:** Identify and fix an N+1 query problem using JOIN FETCH.
 
@@ -2096,10 +2104,11 @@ for (Movie movie : movies) {
 ## Section 9: Testing (Exercises 44-47)
 
 📖 **Learn the theory first:** [Chapter 16: Testing](../day-6/16-testing.md)
+🎨 **Prefer the fun version?** [Chapter 16 (Head First)](../head-first-style/day-6/16-testing.md)
 
 ### Exercise 44: Unit Test a Service ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) — the "Unit Testing with Mockito" section.
+📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) · [Head First](../head-first-style/day-6/16-testing.md) — the "Unit Testing with Mockito" section.
 
 **Problem:** Write unit tests for a `MovieService` class using JUnit 5 and Mockito.
 
@@ -2161,7 +2170,7 @@ All 6 tests should pass.
 
 ### Exercise 45: MockMvc Controller Tests ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) — the "MockMvc and @WebMvcTest" section.
+📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) · [Head First](../head-first-style/day-6/16-testing.md) — the "MockMvc and @WebMvcTest" section.
 
 **Problem:** Write controller tests using `MockMvc` to test HTTP behavior without starting a real server.
 
@@ -2220,7 +2229,7 @@ void getAllMovies_returns200() throws Exception {
 
 ### Exercise 46: Integration Test ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) — the "Integration Testing with @SpringBootTest" section.
+📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) · [Head First](../head-first-style/day-6/16-testing.md) — the "Integration Testing with @SpringBootTest" section.
 
 **Problem:** Write an integration test that starts the full Spring Boot application and tests the Movie API end-to-end.
 
@@ -2283,7 +2292,7 @@ class MovieIntegrationTest {
 
 ### Exercise 47: Test Validation Errors ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) — the "Testing Validation" section.
+📖 *Need a refresher?* See [Chapter 16: Testing](../day-6/16-testing.md) · [Head First](../head-first-style/day-6/16-testing.md) — the "Testing Validation" section.
 
 **Problem:** Write MockMvc tests that verify validation is working correctly — send invalid data and assert 400 with the expected error messages.
 
@@ -2335,10 +2344,11 @@ void register_blankUsername_returns400() throws Exception {
 ## Section 10: Security & Configuration (Exercises 48-50)
 
 📖 **Learn the theory first:** [Chapter 15: Configuration and Profiles](../day-5/15-configuration-and-profiles.md) | [Chapter 18: Security Basics](../day-6/18-security-basics.md)
+🎨 **Prefer the fun version?** [Chapter 15 (Head First)](../head-first-style/day-5/15-configuration-and-profiles.md) | [Chapter 18 (Head First)](../head-first-style/day-6/18-security-basics.md)
 
 ### Exercise 48: Profile-Specific Configuration ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 15: Configuration and Profiles](../day-5/15-configuration-and-profiles.md) — the "Profiles" section.
+📖 *Need a refresher?* See [Chapter 15: Configuration and Profiles](../day-5/15-configuration-and-profiles.md) · [Head First](../head-first-style/day-5/15-configuration-and-profiles.md) — the "Profiles" section.
 
 **Problem:** Create profile-specific configuration files for development and production environments.
 
@@ -2405,7 +2415,7 @@ $ curl http://localhost:8080/api/info
 
 ### Exercise 49: Public and Protected Endpoints ⭐⭐
 
-📖 *Need a refresher?* See [Chapter 18: Security Basics](../day-6/18-security-basics.md) — the "SecurityFilterChain" section.
+📖 *Need a refresher?* See [Chapter 18: Security Basics](../day-6/18-security-basics.md) · [Head First](../head-first-style/day-6/18-security-basics.md) — the "SecurityFilterChain" section.
 
 **Problem:** Add Spring Security so that GET endpoints are public but POST, PUT, and DELETE require authentication.
 
@@ -2473,7 +2483,7 @@ $ curl -v -X DELETE http://localhost:8080/api/movies/1
 
 ### Exercise 50: Complete Security Configuration ⭐⭐⭐
 
-📖 *Need a refresher?* See [Chapter 18: Security Basics](../day-6/18-security-basics.md) — the "Role-Based Access Control" section.
+📖 *Need a refresher?* See [Chapter 18: Security Basics](../day-6/18-security-basics.md) · [Head First](../head-first-style/day-6/18-security-basics.md) — the "Role-Based Access Control" section.
 
 **Problem:** Create a complete `SecurityFilterChain` that uses HTTP Basic authentication with an in-memory user, BCrypt password encoding, and role-based access control.
 
