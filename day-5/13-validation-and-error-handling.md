@@ -403,6 +403,22 @@ curl -v http://localhost:8080/api/books/999
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 35](../appendices/E-coding-exercises.md#exercise-35) | Add Validation Annotations | ⭐⭐ |
+| [Exercise 36](../appendices/E-coding-exercises.md#exercise-36) | Global Exception Handler | ⭐⭐ |
+| [Exercise 37](../appendices/E-coding-exercises.md#exercise-37) | Structured Validation Errors | ⭐⭐ |
+| [Exercise 38](../appendices/E-coding-exercises.md#exercise-38) | Handle Multiple Exception Types | ⭐⭐⭐ |
+| [Exercise 39](../appendices/E-coding-exercises.md#exercise-39) | Test Validation with curl | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] Never trust client input — always validate on the backend

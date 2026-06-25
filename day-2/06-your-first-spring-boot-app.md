@@ -677,6 +677,19 @@ Without `spring-boot-starter-web`, there's no embedded Tomcat server, so Spring 
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 11](../appendices/E-coding-exercises.md#exercise-11) | Your First GET Endpoint | ⭐ |
+| [Exercise 12](../appendices/E-coding-exercises.md#exercise-12) | Return an Object as JSON | ⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] I can generate a Spring Boot project using Spring Initializr

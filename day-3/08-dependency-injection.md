@@ -402,6 +402,20 @@ Without DI, this would be impossible — the controller would create its own ser
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 19](../appendices/E-coding-exercises.md#exercise-19) | Identify and Fix Tight Coupling | ⭐ |
+| [Exercise 20](../appendices/E-coding-exercises.md#exercise-20) | Interface with Multiple Implementations | ⭐⭐ |
+| [Exercise 21](../appendices/E-coding-exercises.md#exercise-21) | Refactor Field Injection | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] A dependency is any object another object needs to do its job

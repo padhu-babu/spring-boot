@@ -479,6 +479,23 @@ public ResponseEntity<List<BookResponse>> getLongBooks(@RequestParam(defaultValu
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 29](../appendices/E-coding-exercises.md#exercise-29) | Spring Data Repository | ⭐⭐ |
+| [Exercise 30](../appendices/E-coding-exercises.md#exercise-30) | Service Layer with JPA | ⭐⭐ |
+| [Exercise 31](../appendices/E-coding-exercises.md#exercise-31) | Custom Query Methods | ⭐⭐ |
+| [Exercise 32](../appendices/E-coding-exercises.md#exercise-32) | JPQL with @Query | ⭐⭐ |
+| [Exercise 33](../appendices/E-coding-exercises.md#exercise-33) | Complete Task Manager API | ⭐⭐⭐ |
+| [Exercise 34](../appendices/E-coding-exercises.md#exercise-34) | Configure H2 Database | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] A database stores data persistently in tables with typed columns

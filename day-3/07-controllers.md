@@ -425,6 +425,22 @@ These are all problems we'll fix in upcoming chapters.
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 13](../appendices/E-coding-exercises.md#exercise-13) | Full CRUD Controller | ⭐⭐ |
+| [Exercise 14](../appendices/E-coding-exercises.md#exercise-14) | Path Variables | ⭐⭐ |
+| [Exercise 15](../appendices/E-coding-exercises.md#exercise-15) | Query Parameters for Filtering | ⭐⭐ |
+| [Exercise 16](../appendices/E-coding-exercises.md#exercise-16) | Accept JSON with @RequestBody | ⭐⭐ |
+| [Exercise 17](../appendices/E-coding-exercises.md#exercise-17) | ResponseEntity with Status Codes | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] A controller is a class annotated with `@RestController` that handles HTTP requests

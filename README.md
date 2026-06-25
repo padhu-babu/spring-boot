@@ -71,6 +71,8 @@ appendices/
   B-http-status-codes.md
   C-maven-cheatsheet.md
   D-glossary.md
+  E-coding-exercises.md
+  F-exercise-solutions.md
 ```
 
 ### Each Chapter Has

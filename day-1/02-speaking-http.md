@@ -575,6 +575,20 @@ Write down (in your own words):
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 1](../appendices/E-coding-exercises.md#exercise-1) | Exploring HTTP with curl | ⭐ |
+| [Exercise 4](../appendices/E-coding-exercises.md#exercise-4) | Match HTTP Methods to CRUD | ⭐ |
+| [Exercise 6](../appendices/E-coding-exercises.md#exercise-6) | Decode a curl Command | ⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] I understand that HTTP is the protocol (shared language) that clients and servers use

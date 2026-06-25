@@ -167,6 +167,8 @@ Build these to solidify your skills:
 | **Chat API** | WebSockets, real-time messaging |
 | **URL Shortener** | Unique ID generation, redirects, click tracking |
 
+Complete all 50 exercises in [Appendix E](../appendices/E-coding-exercises.md) to solidify your skills.
+
 ---
 
 ## Final Exercise: Review Your Journey

@@ -599,6 +599,19 @@ Not backend:
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 2](../appendices/E-coding-exercises.md#exercise-2) | Design a Todo REST API | ⭐ |
+| [Exercise 5](../appendices/E-coding-exercises.md#exercise-5) | Design an E-Commerce Cart API | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] I can explain the difference between frontend and backend

@@ -420,6 +420,21 @@ Run all the same curl commands from Chapter 9. The API behavior should be identi
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 23](../appendices/E-coding-exercises.md#exercise-23) | Refactor a Monolithic Controller | ⭐⭐ |
+| [Exercise 24](../appendices/E-coding-exercises.md#exercise-24) | Identify Layer Violations | ⭐⭐ |
+| [Exercise 25](../appendices/E-coding-exercises.md#exercise-25) | Build a 3-Layer Employee API | ⭐⭐ |
+| [Exercise 26](../appendices/E-coding-exercises.md#exercise-26) | Design Layer Responsibilities | ⭐⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] The three layers are Controller (HTTP), Service (logic), Repository (data)

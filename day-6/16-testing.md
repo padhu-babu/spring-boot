@@ -451,6 +451,21 @@ deleteBook_existingBook_returns204NoContent()
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 44](../appendices/E-coding-exercises.md#exercise-44) | Unit Test with Mockito | ⭐⭐ |
+| [Exercise 45](../appendices/E-coding-exercises.md#exercise-45) | MockMvc Controller Test | ⭐⭐ |
+| [Exercise 46](../appendices/E-coding-exercises.md#exercise-46) | Integration Test | ⭐⭐⭐ |
+| [Exercise 47](../appendices/E-coding-exercises.md#exercise-47) | Test Validation Errors | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] Unit tests verify one class in isolation using mocks

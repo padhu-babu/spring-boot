@@ -298,6 +298,19 @@ http.cors(withDefaults())  // Add this to your HttpSecurity configuration
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 49](../appendices/E-coding-exercises.md#exercise-49) | Public and Protected Endpoints | ⭐⭐ |
+| [Exercise 50](../appendices/E-coding-exercises.md#exercise-50) | SecurityFilterChain with Basic Auth | ⭐⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] Authentication = who are you? Authorization = what can you do?

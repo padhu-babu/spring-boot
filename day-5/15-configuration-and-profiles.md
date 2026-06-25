@@ -286,6 +286,18 @@ mvn spring-boot:run -Dspring.profiles.active=prod
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 48](../appendices/E-coding-exercises.md#exercise-48) | Profile-Specific Configuration | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] `application.properties` is the central configuration file

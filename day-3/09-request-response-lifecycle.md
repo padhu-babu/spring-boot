@@ -305,6 +305,18 @@ Test these scenarios and verify the status code:
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 18](../appendices/E-coding-exercises.md#exercise-18) | Complete Notes API | ⭐⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] I understand the full request lifecycle: Client → Tomcat → DispatcherServlet → Controller → Service → back

@@ -702,6 +702,22 @@ Each of the following JSON snippets has a problem (or is perfectly valid). For e
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 3](../appendices/E-coding-exercises.md#exercise-3) | Fix Non-RESTful Endpoints | ⭐⭐ |
+| [Exercise 7](../appendices/E-coding-exercises.md#exercise-7) | Java ↔ JSON Conversion | ⭐ |
+| [Exercise 8](../appendices/E-coding-exercises.md#exercise-8) | Fix Broken JSON | ⭐ |
+| [Exercise 9](../appendices/E-coding-exercises.md#exercise-9) | Model a Complex Nested Object | ⭐⭐ |
+| [Exercise 10](../appendices/E-coding-exercises.md#exercise-10) | JSON Response to Java Classes | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] I can read and write JSON fluently (objects, arrays, nesting)

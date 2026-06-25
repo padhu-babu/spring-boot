@@ -549,6 +549,21 @@ curl http://localhost:8080/api/books
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 40](../appendices/E-coding-exercises.md#exercise-40) | @ManyToOne Relationship | ⭐⭐ |
+| [Exercise 41](../appendices/E-coding-exercises.md#exercise-41) | @OneToMany Relationship | ⭐⭐ |
+| [Exercise 42](../appendices/E-coding-exercises.md#exercise-42) | Complete Blog API | ⭐⭐⭐ |
+| [Exercise 43](../appendices/E-coding-exercises.md#exercise-43) | JOIN FETCH Query | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] Relationships connect entities (One-to-Many, Many-to-One, etc.)

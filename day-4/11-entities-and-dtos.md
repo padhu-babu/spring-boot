@@ -447,6 +447,19 @@ curl -X POST http://localhost:8080/api/books \
 
 ---
 
+### 📝 Practice Exercises
+
+Ready to test your understanding? These exercises from [Appendix E](../appendices/E-coding-exercises.md) directly apply what you learned in this chapter:
+
+| Exercise | Topic | Difficulty |
+|----------|-------|------------|
+| [Exercise 27](../appendices/E-coding-exercises.md#exercise-27) | Create a JPA Entity | ⭐ |
+| [Exercise 28](../appendices/E-coding-exercises.md#exercise-28) | Create Request and Response DTOs | ⭐⭐ |
+
+Solutions are in [Appendix F](../appendices/F-exercise-solutions.md).
+
+---
+
 ## Key Takeaways
 
 - [ ] Entities represent database rows; DTOs represent API data
