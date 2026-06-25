@@ -44,24 +44,26 @@ We'll focus on **One-to-Many / Many-to-One** — the most common relationship.
 
 In the database, relationships are represented by **foreign keys** — a column in one table that references the ID of another table:
 
+```mermaid
+erDiagram
+    AUTHORS {
+        int id PK
+        string name
+        string nationality
+    }
+    BOOKS {
+        int id PK
+        string title
+        int pages
+        int author_id FK
+    }
+    AUTHORS ||--o{ BOOKS : "has many"
 ```
-Table: authors
-┌────┬──────────────────┬─────────────┐
-│ id │ name             │ nationality │
-├────┼──────────────────┼─────────────┤
-│  1 │ Frank Herbert    │ American    │
-│  2 │ George Orwell    │ British     │
-└────┴──────────────────┴─────────────┘
 
-Table: books
-┌────┬───────────┬───────┬───────────┐
-│ id │ title     │ pages │ author_id │  ← Foreign key: points to authors.id
-├────┼───────────┼───────┼───────────┤
-│  1 │ Dune      │   412 │         1 │  ← Belongs to Frank Herbert
-│  2 │ 1984      │   328 │         2 │  ← Belongs to George Orwell
-│  3 │ Dune M.   │   256 │         1 │  ← Also belongs to Frank Herbert
-└────┴───────────┴───────┴───────────┘
-```
+**Sample data:**
+- **authors**: (1, "Frank Herbert", "American"), (2, "George Orwell", "British")
+- **books**: (1, "Dune", 412, **1**), (2, "1984", 328, **2**), (3, "Dune M.", 256, **1**)
+- `author_id` is the foreign key — e.g., books 1 and 3 both point to author 1 (Frank Herbert)
 
 `author_id` in the books table is the **foreign key** — it creates the link.
 

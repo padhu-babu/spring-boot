@@ -20,15 +20,15 @@
 
 A database is a program that stores data in an organized, queryable way. Think of it as a super-powered spreadsheet:
 
-```
-Table: books
-┌────┬───────────────┬──────────────────┬───────┬─────────────────────┐
-│ id │ title         │ author           │ pages │ created_at          │
-├────┼───────────────┼──────────────────┼───────┼─────────────────────┤
-│  1 │ Dune          │ Frank Herbert    │   412 │ 2025-01-15 10:00:00 │
-│  2 │ 1984          │ George Orwell    │   328 │ 2025-01-15 10:05:00 │
-│  3 │ Clean Code    │ Robert C. Martin │   464 │ 2025-01-15 10:10:00 │
-└────┴───────────────┴──────────────────┴───────┴─────────────────────┘
+```mermaid
+erDiagram
+    books {
+        BIGINT id PK "1, 2, 3"
+        VARCHAR title "Dune, 1984, Clean Code"
+        VARCHAR author "Frank Herbert, George Orwell, Robert C. Martin"
+        INT pages "412, 328, 464"
+        TIMESTAMP created_at "2025-01-15 10:00:00, ..."
+    }
 ```
 
 Key differences from a spreadsheet:

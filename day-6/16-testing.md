@@ -31,17 +31,17 @@ You already test manually — you run the app, use curl, and check the output. A
 
 ### The Test Pyramid
 
-```
-          /\
-         /  \         End-to-End Tests
-        /    \        (few, slow, expensive)
-       /──────\
-      /        \      Integration Tests
-     /          \     (moderate number, medium speed)
-    /────────────\
-   /              \   Unit Tests
-  /                \  (many, fast, cheap)
- /──────────────────\
+```mermaid
+graph TD
+    E2E["End-to-End Tests<br/><i>few, slow, expensive</i>"]
+    INT["Integration Tests<br/><i>moderate number, medium speed</i>"]
+    UNIT["Unit Tests<br/><i>many, fast, cheap</i>"]
+
+    E2E --- INT --- UNIT
+
+    style E2E fill:#f76,stroke:#333,color:#000
+    style INT fill:#fa4,stroke:#333,color:#000
+    style UNIT fill:#4b4,stroke:#333,color:#000
 ```
 
 | Type | What It Tests | Speed | Quantity |

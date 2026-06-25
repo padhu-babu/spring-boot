@@ -39,26 +39,13 @@ Request arrives → Is the user authenticated? → NO → 401 Unauthorized
 
 Spring Security works by inserting **filters** into the request pipeline, before your controller is reached:
 
-```
-HTTP Request
-    ↓
-┌──────────────────────┐
-│ Spring Security      │
-│ Filter Chain         │
-│                      │
-│ 1. Is this request   │
-│    to a secured URL? │
-│ 2. Does it have      │
-│    credentials?      │
-│ 3. Are credentials   │
-│    valid?            │
-│ 4. Does the user     │
-│    have the right    │
-│    role?             │
-└──────────┬───────────┘
-           ↓
-     Your Controller
-     (only reached if all checks pass)
+```mermaid
+flowchart TD
+    REQ["HTTP Request"]
+    FILTER["Spring Security Filter Chain<br/><br/>1. Is this request to a secured URL?<br/>2. Does it have credentials?<br/>3. Are credentials valid?<br/>4. Does the user have the right role?"]
+    CTRL["Your Controller<br/><i>only reached if all checks pass</i>"]
+
+    REQ --> FILTER --> CTRL
 ```
 
 ### Authentication Methods

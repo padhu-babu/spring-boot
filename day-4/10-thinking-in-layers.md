@@ -29,62 +29,53 @@ This is **Separation of Concerns** — the most important principle in software 
 
 ### The Three-Layer Architecture
 
-```
-                HTTP Request
-                     │
-                     ▼
-┌──────────────────────────────────────┐
-│         CONTROLLER LAYER             │
-│                                      │
-│  Responsibility:                     │
-│  • Receive HTTP requests             │
-│  • Extract path variables, params    │
-│  • Call the appropriate service      │
-│  • Return HTTP response with         │
-│    correct status code               │
-│                                      │
-│  Does NOT:                           │
-│  • Contain business logic            │
-│  • Talk to the database              │
-│  • Know how data is stored           │
-└──────────────────┬───────────────────┘
-                   │ Java method call
-                   ▼
-┌──────────────────────────────────────┐
-│           SERVICE LAYER              │
-│                                      │
-│  Responsibility:                     │
-│  • Business logic and rules          │
-│  • Validation (beyond basic format)  │
-│  • Orchestrate operations            │
-│  • Transform data between DTOs       │
-│    and entities                      │
-│                                      │
-│  Does NOT:                           │
-│  • Know about HTTP (no request/      │
-│    response objects)                 │
-│  • Write SQL or manage connections   │
-│  • Know about JSON                   │
-└──────────────────┬───────────────────┘
-                   │ Java method call
-                   ▼
-┌──────────────────────────────────────┐
-│         REPOSITORY LAYER             │
-│                                      │
-│  Responsibility:                     │
-│  • Store and retrieve data           │
-│  • Database queries                  │
-│  • Data access logic                 │
-│                                      │
-│  Does NOT:                           │
-│  • Contain business rules            │
-│  • Know about HTTP                   │
-│  • Decide what data to return        │
-│    (it returns what's asked for)     │
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-              DATABASE
+```mermaid
+flowchart TD
+    A["HTTP Request"] --> B
+
+    B["CONTROLLER LAYER
+    ---
+    Responsibility:
+    • Receive HTTP requests
+    • Extract path variables, params
+    • Call the appropriate service
+    • Return HTTP response with correct status code
+
+    Does NOT:
+    • Contain business logic
+    • Talk to the database
+    • Know how data is stored"]
+
+    B -- "Java method call" --> C
+
+    C["SERVICE LAYER
+    ---
+    Responsibility:
+    • Business logic and rules
+    • Validation (beyond basic format)
+    • Orchestrate operations
+    • Transform data between DTOs and entities
+
+    Does NOT:
+    • Know about HTTP (no request/response objects)
+    • Write SQL or manage connections
+    • Know about JSON"]
+
+    C -- "Java method call" --> D
+
+    D["REPOSITORY LAYER
+    ---
+    Responsibility:
+    • Store and retrieve data
+    • Database queries
+    • Data access logic
+
+    Does NOT:
+    • Contain business rules
+    • Know about HTTP
+    • Decide what data to return (it returns what's asked for)"]
+
+    D --> E["DATABASE"]
 ```
 
 ### The Rules
@@ -386,10 +377,12 @@ public class BookController {
 ```
 
 Notice the clean dependency chain:
-```
-BookController → BookService → BookRepository
-     ↓                ↓              ↓
- HTTP stuff      Business rules   Data storage
+```mermaid
+flowchart TD
+    BookController --> BookService --> BookRepository
+    BookController -.- A["HTTP stuff"]
+    BookService -.- B["Business rules"]
+    BookRepository -.- C["Data storage"]
 ```
 
 ---

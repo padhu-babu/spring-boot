@@ -18,47 +18,46 @@
 
 When a client sends `GET /api/books/42` to your Spring Boot application, here's what happens:
 
-```
-Client sends HTTP request
-    ↓
-┌─────────────────────────────────────────────────────┐
-│ TOMCAT (Embedded Web Server)                         │
-│   Receives the raw TCP connection                    │
-│   Parses the HTTP request (method, path, headers)    │
-│   Creates HttpServletRequest and HttpServletResponse │
-│   Passes them to Spring's DispatcherServlet          │
-└────────────────────┬────────────────────────────────┘
-                     ↓
-┌─────────────────────────────────────────────────────┐
-│ DISPATCHER SERVLET (Spring's Front Controller)       │
-│   Looks at the HTTP method + path                    │
-│   Finds the matching controller method               │
-│   (GET + /api/books/{id} → BookController.getById)  │
-│   Extracts path variables, query params              │
-│   Deserializes request body (JSON → Java object)     │
-│   Calls the controller method                        │
-└────────────────────┬────────────────────────────────┘
-                     ↓
-┌─────────────────────────────────────────────────────┐
-│ YOUR CONTROLLER METHOD                               │
-│   Receives the extracted parameters                  │
-│   Calls the service layer                            │
-│   Returns a value (object, list, ResponseEntity)     │
-└────────────────────┬────────────────────────────────┘
-                     ↓
-┌─────────────────────────────────────────────────────┐
-│ DISPATCHER SERVLET (again)                           │
-│   Takes the return value                             │
-│   Serializes it to JSON (Java object → JSON)         │
-│   Sets the response status code                      │
-│   Sets Content-Type header to application/json       │
-│   Writes the response                                │
-└────────────────────┬────────────────────────────────┘
-                     ↓
-┌─────────────────────────────────────────────────────┐
-│ TOMCAT                                               │
-│   Sends the HTTP response back to the client         │
-└─────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    A["Client sends HTTP request"] --> B
+
+    B["TOMCAT (Embedded Web Server)
+    Receives the raw TCP connection
+    Parses the HTTP request (method, path, headers)
+    Creates HttpServletRequest and HttpServletResponse
+    Passes them to Spring's DispatcherServlet"]
+
+    B --> C
+
+    C["DISPATCHER SERVLET (Spring's Front Controller)
+    Looks at the HTTP method + path
+    Finds the matching controller method
+    (GET + /api/books/{id} → BookController.getById)
+    Extracts path variables, query params
+    Deserializes request body (JSON → Java object)
+    Calls the controller method"]
+
+    C --> D
+
+    D["YOUR CONTROLLER METHOD
+    Receives the extracted parameters
+    Calls the service layer
+    Returns a value (object, list, ResponseEntity)"]
+
+    D --> E
+
+    E["DISPATCHER SERVLET (again)
+    Takes the return value
+    Serializes it to JSON (Java object → JSON)
+    Sets the response status code
+    Sets Content-Type header to application/json
+    Writes the response"]
+
+    E --> F
+
+    F["TOMCAT
+    Sends the HTTP response back to the client"]
 ```
 
 ### The DispatcherServlet

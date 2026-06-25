@@ -14,47 +14,25 @@ Day 7: You built a fully functional, tested, documented, secured REST API
 
 Here's your BookShelf application architecture:
 
+```mermaid
+flowchart TD
+    Client["curl / Postman\n(or any client)"]
+    Security["**Spring Security**\nFilter Chain\n(authentication + authorization)"]
+    Controller["**BookController**\n@RestController + @RequestMapping\nReceives HTTP, returns ResponseEntity\nInput validation with @Valid"]
+    Service["**BookService**\n@Service\nBusiness logic, DTO mapping\nThrows BookNotFoundException"]
+    Repository["**BookRepository**\nextends JpaRepository\nAuto-generated CRUD + custom queries"]
+    Database["**H2 Database**\nbooks + authors tables\nJPA/Hibernate ORM"]
+
+    Client --> Security --> Controller --> Service --> Repository --> Database
 ```
-                        ┌─────────────────────────────────────────┐
- curl / Postman ────────┤         Spring Security                  │
- (or any client)        │         Filter Chain                     │
-                        │  (authentication + authorization)        │
-                        └──────────────┬──────────────────────────┘
-                                       │
-                        ┌──────────────▼──────────────────────────┐
-                        │         BookController                   │
-                        │  @RestController + @RequestMapping       │
-                        │  Receives HTTP, returns ResponseEntity   │
-                        │  Input validation with @Valid             │
-                        └──────────────┬──────────────────────────┘
-                                       │
-                        ┌──────────────▼──────────────────────────┐
-                        │         BookService                      │
-                        │  @Service                                │
-                        │  Business logic, DTO mapping             │
-                        │  Throws BookNotFoundException            │
-                        └──────────────┬──────────────────────────┘
-                                       │
-                        ┌──────────────▼──────────────────────────┐
-                        │         BookRepository                   │
-                        │  extends JpaRepository                   │
-                        │  Auto-generated CRUD + custom queries    │
-                        └──────────────┬──────────────────────────┘
-                                       │
-                        ┌──────────────▼──────────────────────────┐
-                        │         H2 Database                      │
-                        │  books + authors tables                   │
-                        │  JPA/Hibernate ORM                       │
-                        └─────────────────────────────────────────┘
 
 Supporting infrastructure:
-  • GlobalExceptionHandler — consistent error responses
-  • Logging (SLF4J) — operational visibility
-  • Actuator — health monitoring
-  • Swagger/OpenAPI — API documentation
-  • Profiles — dev/prod configuration
-  • Tests — unit + integration
-```
+- GlobalExceptionHandler — consistent error responses
+- Logging (SLF4J) — operational visibility
+- Actuator — health monitoring
+- Swagger/OpenAPI — API documentation
+- Profiles — dev/prod configuration
+- Tests — unit + integration
 
 Compare this to Chapter 1's exercise where you sketched a basic client-server diagram. You now understand every box in this architecture.
 
